@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            name="Sample Preferences"
+            class="pluginmanager.preferences.SamplePreferencePage"
+            id="pluginmanager.preferences.SamplePreferencePage">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            name="Plugin Manager Preferences"
+            class="pluginmanager.preferences.PluginManagerPreferencePage"
+            id="pluginmanager.preferences.PluginManagerPreferencePage">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="pluginmanager.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+   <extension
+         point="org.eclipse.ui.propertyPages">
+      <page
+            name="Sample Page"
+            nameFilter="*.*"
+            class="pluginmanager.properties.SamplePropertyPage"
+            id="pluginmanager.properties.samplePropertyPage">
+         <enabledWhen>
+            <instanceof
+                  value="org.eclipse.core.resources.IFile">
+            </instanceof>
+         </enabledWhen>
+      </page>
+   </extension>
+
+</plugin>
