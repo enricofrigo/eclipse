@@ -10,14 +10,13 @@
  *******************************************************************************/
 package pluginmanager.preferences;
 
-import java.util.Collection;
-
 import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 import org.osgi.framework.Bundle;
 
 public class PluginEntriesContentProvider implements IStructuredContentProvider {
 
+	
 	public PluginEntriesContentProvider() {
 		super();
 	}
@@ -27,8 +26,7 @@ public class PluginEntriesContentProvider implements IStructuredContentProvider 
 	}
 
 	public Object[] getElements(Object inputElement) {
-		Collection coll = (Collection) inputElement;
-		return coll.toArray(new Bundle[0]);
+		return (Bundle[])inputElement;
 	}
 
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
